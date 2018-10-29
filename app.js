@@ -9,21 +9,24 @@ app.use(express.json())
 
 app.get('/', (req, res) => res.send('Hello World!'))
 app.post('/', (req, res) => {
-  const { body } = req
+  try {
+    const { body } = req
 
-  switch (body.type) {
-    case 'confirmation':
-      res.send(CONFIRMATION)
-      return
-      break
+    switch (body.type) {
+      case 'confirmation':
+        res.send(CONFIRMATION)
+        return
+        break
 
-    case 'message_new':
-      processing(body.object)
-      return
-      break
+      case 'message_new':
+        processing(body.object)
+        break
 
-    default:
-      break
+      default:
+        break
+    }
+  } catch (error) {
+    console.log(error)
   }
 
   res.send('ok')
