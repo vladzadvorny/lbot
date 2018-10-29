@@ -8,5 +8,7 @@ module.exports = {
   PORT: process.env.PORT || 3000,
   USER_TOKEN: process.env.USER_TOKEN,
   COMMUNITY_TOKEN: process.env.COMMUNITY_TOKEN,
-  CONFIRMATION: process.env.CONFIRMATION
+  CONFIRMATION: process.env.CONFIRMATION,
+  PUBLIC_ID: process.env.PUBLIC_ID,
+  INTERVAL: 1
 }
